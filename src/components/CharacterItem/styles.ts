@@ -35,5 +35,10 @@ export const styles = StyleSheet.create({
 	textAbout: {
 		color: theme.light_gray,
 		fontWeight: '600'
+	},
+	star: {
+		color: theme.green,
+		fontSize: 16,
+		fontWeight: '700'
 	}
 })

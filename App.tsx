@@ -35,7 +35,8 @@ const App = () => {
 	}, [id])
 
 	useEffect(() => {
-		if (searchText !== '') setCharacterList(character.filter((item: { name: string | string[] }) => (item.name.indexOf(searchText) > -1)))
+		if (searchText !== '') setCharacterList(character.filter((item: { name: string | string[] }) => 
+			(item.name.indexOf(searchText) > -1)))
 		else setCharacterList(character)
 	}, [searchText])
 

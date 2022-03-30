@@ -1,8 +1,9 @@
 // External libraries
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
 	Image,
 	Text,
+	TouchableOpacity,
 	View,
 } from 'react-native'
 
@@ -24,6 +25,8 @@ interface CharacterItemProps {
 }
 
 const CharacterItem: React.FC<CharacterItemProps> = ({ data }) => {
+	const [star, setStar] = useState(false)
+
 	return (
 		<View style={styles.container}>
 			<Text style={styles.name}>{data.name}</Text>
@@ -33,6 +36,9 @@ const CharacterItem: React.FC<CharacterItemProps> = ({ data }) => {
 				<Text style={styles.textAbout}>Origin: {data.origin.name}</Text>
 				<Text style={styles.textAbout}>Location: {data.location.name}</Text>
 			</View>
+			<TouchableOpacity onPress={() => setStar(!star)}>
+				{!star ? <Text style={styles.star}>SALVAR</Text> : <Text style={styles.star}>REMOVER</Text>}
+			</TouchableOpacity>
 		</View>
 	)
 }
